@@ -2,21 +2,21 @@ import React from 'react';
 
 import Operation from './Operation';
 import Resume from './Resume';
-import Grafico from './Grafico';
+import Chart from './Chart';
 
 export default () => (
   <div>
     <Header />
     <Operation />
     <Resume />
-    <Grafico />
+    <Chart />
   </div>
 );
 
 const Header = () => (
   <div className="header box">
     <div className="centralize">
-      Bank account
+      Conta bancária
     </div>
   </div>
 );

@@ -5,7 +5,7 @@ import { observer, inject } from 'mobx-react';
 
 @inject('txStore')
 @observer
-export default class Grafico extends React.Component {
+export default class Chart extends React.Component {
   componentDidMount() {
     const { txStore } = this.props;
     txStore.getCompiled();

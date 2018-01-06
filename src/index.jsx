@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'mobx-react';
 
-import TxStore from './store/TxStore';
+import Store from './store';
 import App from './components/App';
 
 import './index.less';
@@ -10,7 +10,7 @@ import './index.less';
 /* global document */
 
 const stores = {
-  txStore: new TxStore()
+  txStore: new Store()
 };
 
 const app = (
