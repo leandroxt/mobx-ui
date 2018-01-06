@@ -16,7 +16,7 @@ export default () => (
 const Header = () => (
   <div className="header box">
     <div className="centralize">
-      Bank account
+      Conta bancária
     </div>
   </div>
 );
