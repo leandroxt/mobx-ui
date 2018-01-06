@@ -1,8 +1,8 @@
 import { observable } from 'mobx';
 
-import TxService from '../service/TxService';
+import service from '../service';
 
-export default class TxStore {
+export default class {
   @observable tx;
   @observable tag;
   @observable value;
@@ -18,32 +18,32 @@ export default class TxStore {
   }
 
   newOperation(operation) {
-    TxService.sendOperation(operation)
-      .then((tx) => {
-        this.tx = tx.data;
+    service.sendOperation(operation)
+      .then(({ data }) => {
+        this.tx = data;
         this.getBalance();
         this.getCompiled();
       });
   }
 
   getTx() {
-    TxService.getTx()
-      .then((response) => {
-        this.tx = response.data;
+    service.getTx()
+      .then(({ data }) => {
+        this.tx = data;
       });
   }
 
   getBalance() {
-    TxService.getBalance()
-      .then((response) => {
-        this.balance = response.data.balance;
+    service.getBalance()
+      .then(({ data }) => {
+        this.balance = data.balance;
       });
   }
 
   getCompiled() {
-    TxService.getCompiled()
-      .then((response) => {
-        this.compiled = response.data;
+    service.getCompiled()
+      .then(({ data }) => {
+        this.compiled = data;
       });
   }
 }
